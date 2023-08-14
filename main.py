@@ -23,7 +23,7 @@ driver = webdriver.Chrome(options=chrome_options)
 
 items = []
 
-for page in range(0, 10, 10):
+for page in range(0, 1000, 10):
     url = f"https://schroff.nvent.com/ru-ru/search#first={page}&t=Tab_All&f:@nventtype=[Product%20Item]"
     driver.get(url)
     time.sleep(3)
