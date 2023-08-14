@@ -75,7 +75,8 @@ for item in items:
         time.sleep(.25)
         try:
             file_name = max([download_dir + '/' + f for f in os.listdir(download_dir)], key=os.path.getctime)
-            # Директория PDF
+            file_name = file_name.split("/")[-1]
+            # Название файла PDF
             print(file_name)
         except ValueError:
             pass
