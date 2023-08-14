@@ -7,7 +7,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 
 
-download_dir = '/Users/emindzhafarov/PycharmProjects/parser_armobit/docs'
+download_dir = ''  # Директория для документов
 # Инициализация драйвера
 chrome_options = Options()
 # chrome_options.add_argument("--headless")
