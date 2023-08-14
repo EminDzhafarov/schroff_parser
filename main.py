@@ -53,9 +53,7 @@ for item in items:
     # Атрибуты позиции
     print(attributes)
 
-    driver.get(item[2])
-    driver.execute_script("document.title = \'{}\'".format("filename"))
-    time.sleep(3)
+    # Скачиваем картинки
     driver.find_element(By.XPATH, '//*[@id="block-mainpagecontent"]/div/div/div/div[2]/div[1]'
                                   '/div/div[2]/div/div[2]/ul').click()
     slick_track = driver.find_element(By.CLASS_NAME, "slick-track")
@@ -66,6 +64,11 @@ for item in items:
         response.raise_for_status()
         with open(f'images/{item_id}_{images.index(image)}.png.webp', 'wb') as file:
             file.write(response.content)
+
+    # Скачиваем документы
+    driver.get(item[2])
+    driver.execute_script("document.title = \'{}\'".format("filename"))
+    time.sleep(3)
 
     file_name = ""
     while file_name.lower().endswith('.pdf') is False:
